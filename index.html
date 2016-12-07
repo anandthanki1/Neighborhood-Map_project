@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Neighborhood Map Pro </title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jasny-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
+    <style type="text/css">
+        #gmap {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1000000;
+        }
+        html,body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            width: 100%;
+            height: 30px;
+            line-height: 25px;
+            position: relative;
+        }
+        h2 {
+            padding: 0 11px 0 13px;
+            margin-top: 44px;
+            margin-left: 25px;
+
+        }
+        input {
+            margin-top: 0;
+            border: 0px solid transparent;
+            border-radius: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-family: Roboto;
+            margin-left: 3px;
+            padding: 0 ;
+            width: 96%;
+            position: relative;
+        }
+        button {
+            font-size: 19px;
+            cursor: pointer;
+            position: relative;
+        }
+        .but {
+            font-size: 13px;
+            border: #1d1f20  solid;
+            cursor: pointer;
+            position: relative;
+        }
+        #wikihead {
+            cursor: pointer;
+        }
+        @media screen and (min-width: 200px) and (max-width: 580px)
+        {
+            input {
+                width: 85%;
+            }
+            .but {
+                font-size: 8px;
+            }
+        }
+        @media screen and (min-width: 600) and (max-width: 900px)
+        {
+            input {
+                width: 55%;
+            }
+            .but {
+                font-size: 10px;
+            }
+        }
+        @media screen and (min-width: 1100px)
+        {
+            input {
+                width: 96%;
+            }
+            .but {
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header>
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+  <div>
+  <h2 class="navmenu-brand"> Famous Places of New York marked on Map</h2>
+      <ul class="nav navmenu-nav">
+          <li> Central Park </li>
+          <li> Empire State Building </li>
+          <li> Statue of Liberty </li>
+          <li> Rockefeller Center </li>
+          <li> Grand Central Station </li>
+      </ul>
+  </div>
+  <div class="wiki-container">
+  <h2 class="navmenu-brand" id="wikihead" data-bind="click: getWiki"> Wikipedia Links </h2>
+  <ul class="wiki-links">
+  </ul>
+  </div>
+</nav>
+<div class="navbar navbar-default navbar-fixed-top">
+  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+  &#9776
+  </button>
+</div>
+</header>
+    <input type="text" placeholder="Enter the Address" id="schAdd">
+    <button type="button" id="letsgo" class=".but"> &#128269 </button>
+    <div id="gmap"></div>
+<script src="js/lib/knockout-3.2.0.js"></script>
+<script src="js/app.js"></script>
+<script async defer
+                    src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyAEiFlJ19aQUKS9D1sDfdjYScKwrrjeLz8&callback=init">
+    </script>
+</body>
+</html>
