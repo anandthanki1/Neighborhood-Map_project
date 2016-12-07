@@ -18,6 +18,7 @@ you how to run this project
 * The search results will also show the nearby Places like many restaurants or hospitals around your search.
 * If you want wikipedia links of places like Central park or Statue of liberty, you have to type it in search box and after getting location click on hamnburger menu button.
 * Click on Wikipedia Links to get to know about place.
+* Infowindow has Wikipedia link of specific location.
 
 ## Limitation
 
